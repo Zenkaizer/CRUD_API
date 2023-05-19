@@ -5,14 +5,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CrudComponent } from './crud/crud.component';
-import { ModalComponent } from "./modals/modal.component";
+import { RegisterComponent } from "./modals/register.component";
+import { UpdateComponent } from "./modals/update.component";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
         AppComponent,
         CrudComponent,
-        ModalComponent
+        RegisterComponent,
+        UpdateComponent
     ],
     imports: [
         BrowserModule,

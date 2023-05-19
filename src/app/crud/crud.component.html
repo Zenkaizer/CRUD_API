@@ -9,14 +9,13 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"></button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
+            <div class="navbar" id="navbarColor01">
                 <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <input class="form-control me-sm-2" type="search" placeholder="Buscar" id="1">
                     <button class="btn btn-secondary" type="submit">Buscar</button>
                 </form>
                 <a>&nbsp;</a>
-                <app-modal></app-modal>
+                <register-modal></register-modal>
             </div>
         </div>
     </nav>
@@ -44,9 +43,11 @@
                 <td>{{ item.name }}</td>
                 <td>{{ item.description }}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="deleteItem(item.id)">Delete</button>
+                    <button class="btn btn-danger" (click)="deleteItem(item.id)">Eliminar</button>
                     <a>&nbsp;</a>
-                    <button class="btn btn-primary" (click)="updateForm(item.id)">Update</button>
+                    <a (click)="setItem(item)">
+                        <update-modal></update-modal>
+                    </a>
                 </td>
             </tr>
             </tbody>
