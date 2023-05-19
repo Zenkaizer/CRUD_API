@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<!--SEARCH BAR-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary" type="submit">Buscar</button>
+                </form>
+                <a>&nbsp;</a>
+                <app-modal></app-modal>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+
+    <!--TABLE-->
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <tr class="table-dark">
+                <th scope="col">ID</th>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{ item.id }}</td>
+                <td>{{ item.code }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteItem(item.id)">Delete</button>
+                    <a>&nbsp;</a>
+                    <button class="btn btn-primary" (click)="updateForm(item.id)">Update</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

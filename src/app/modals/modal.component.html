@@ -1,0 +1,30 @@
+<ng-template #register let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Registrarse</h4>
+        <button class="btn btn-outline-danger" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-label="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form (ngSubmit)="enviarFormulario()">
+            <label for="code">Code:</label>
+            <input type="text" id="code" name="code" [(ngModel)]="nuevoItem.code" required>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="nuevoItem.name" required>
+            <br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" [(ngModel)]="nuevoItem.description" required></textarea>
+            <br>
+            <div class="botones-modal">
+                <button type="submit">Enviar</button>
+                <button (click)="cerrarModal()">Cerrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="modal.close()">Enviar</button>
+    </div>
+</ng-template>
+
+<button type="button" class="btn btn-dark" (click)="modal.open(register)">Registrarse</button>
